@@ -7,12 +7,24 @@ spec:
   generators:
   - list:
       elements:
-      - path: Charts/Traefik
-        appname: traefik
-        ns: traefik
+      - path: Charts/Harbor
+        appname: harbor
+        ns: harbor
+      - path: Charts/Jenkins
+        appname: jenkins
+        ns: jenkins
+      - path: Charts/JFrog
+        appname: jfrog
+        ns: jfrog
       - path: Charts/MetalLB
         appname: metallb
         ns: metallb-system
+      - path: Charts/Traefik
+        appname: traefik
+        ns: traefik
+      - path: Charts/Vault
+        appname: vault
+        ns: vault
   template:
     metadata:
       name: '{{appname}}'

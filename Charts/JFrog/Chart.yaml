@@ -1,0 +1,14 @@
+apiVersion: v2
+name: vault-wrapper
+description: A Helm chart for Vault with custom configurations
+type: application
+version: 1.0.0
+appVersion: "7.146.10"
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+
+dependencies:
+  - name: artifactory
+    version: "107.146.10"
+    repository: "https://charts.jfrog.io"

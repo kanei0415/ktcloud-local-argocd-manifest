@@ -1,0 +1,14 @@
+apiVersion: v2
+name: harbor-wrapper
+description: A Helm chart for Harbor with custom configurations
+type: application
+version: 1.0.0
+appVersion: "2.15.0"
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+
+dependencies:
+  - name: harbor
+    version: "1.19.0"
+    repository: "https://helm.goharbor.io"
