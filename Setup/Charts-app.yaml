@@ -10,9 +10,6 @@ spec:
       - path: Charts/Traefik
         appname: traefik
         ns: traefik
-      - path: Charts/ArgoCD
-        appname: argocd 
-        ns: argocd
       - path: Charts/MetalLB
         appname: metallb
         ns: metallb-system
