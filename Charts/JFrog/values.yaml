@@ -1764,6 +1764,9 @@ nginx:
     runAsUser: 104
     runAsGroup: 107
     fsGroup: 107
+    sysctls:
+      - name: fs.file-max
+        value: "65535"
   containerSecurityContext:
     enabled: true
     runAsNonRoot: true
