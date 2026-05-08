@@ -11,6 +11,8 @@ spec:
         appname: traefik
       - path: Charts/ArgoCD
         appname: argocd 
+      - path: Charts/MetalLB
+        appname: metallb
   template:
     metadata:
       name: '{{appname}}'

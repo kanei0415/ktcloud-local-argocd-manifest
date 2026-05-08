@@ -1,0 +1,11 @@
+apiVersion: v2
+name: metallb-wrapper
+description: A Helm chart for MetalLB with custom configurations
+type: application
+version: 1.0.0
+appVersion: "0.14.9"
+
+dependencies:
+  - name: metallb
+    version: "0.14.9"
+    repository: "https://metallb.github.io/metallb"
