@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: charts-app
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - path: Charts/Traefik
+        appname: traefik
+      - path: Charts/ArgoCD
+        appname: argocd 
+  template:
+    metadata:
+      name: '{{appname}}'
+    spec:
+      project: default
+      source:
+        repoURL: "https://github.com/kanei0415/ktcloud-k8s-argocd-manifest.git"
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
