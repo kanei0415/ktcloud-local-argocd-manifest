@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: codemeter-applications
+  namespace: argocd
+spec:
+  generators:
+    - list:
+       elements:
+        - environment: release
+          valuesFile: values-release.yaml
+          revision: HEAD
+          namespace: release
+  template:
+    metadata:
+      name: 'ktcloud-msa-market-{{ .environment }}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/kanei0415/ktcloud-market-msa-manifest.git
+        targetRevision: '{{ .revision }}'
+        path: '.'
+        helm:
+          valueFiles:
+            - '{{ .valuesFile }}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{ .namespace }}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

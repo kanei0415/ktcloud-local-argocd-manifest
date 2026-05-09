@@ -1,18 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: charts-app
+  name: apps-app
   namespace: argocd
 spec:
   generators:
   - list:
       elements:
-      - path: Charts/MetalLB
-        appname: metallb
-        ns: metallb-system
-      - path: Charts/Traefik
-        appname: traefik
-        ns: traefik
+      - path: Apps/KTCloudMarket
+        appname: ktcloud-market
+        ns: ktcloud-market
   template:
     metadata:
       name: '{{appname}}'
