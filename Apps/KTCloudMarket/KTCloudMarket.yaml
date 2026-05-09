@@ -7,28 +7,40 @@ spec:
   generators:
     - list:
        elements:
-        - environment: release
-          valuesFile: values-release.yaml
+        - app: inventory-service
+          environment: release
           revision: HEAD
-          namespace: release
+        - app: order-service
+          environment: release
+          revision: HEAD
+        - app: product-service
+          environment: release
+          revision: HEAD
+        - app: user-api-gateway
+          environment: release
+          revision: HEAD
   template:
     metadata:
-      name: 'ktcloud-msa-market-{{ .environment }}'
+      name: '{{ .app }}-{{ .environment }}'
     spec:
       project: default
-      source:
-        repoURL: https://github.com/kanei0415/ktcloud-market-msa-manifest.git
-        targetRevision: '{{ .revision }}'
-        path: '.'
-        helm:
-          valueFiles:
-            - '{{ .valuesFile }}'
+      sources:
+        - repoURL: https://github.com/kanei0415/ktcloud-market-msa-manifest.git
+          targetRevision: HEAD
+          path: '.'
+          ref: template
+        - repoURL: 'https://github.com/kanei0415/ktcloud-market-msa-manifest-values.git'
+          targetRevision: '{{ .revision }}'
+          ref: values
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{ .namespace }}'
+        namespace: release
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+      helm:
+        valueFiles:
+          - '$values/{{ .app }}/values-{{ .environment }}.yaml'
