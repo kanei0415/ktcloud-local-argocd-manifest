@@ -10,15 +10,19 @@ spec:
         - app: inventory-service
           environment: release
           revision: HEAD
+          ns: ktcloud-market-msa-release
         - app: order-service
           environment: release
           revision: HEAD
+          ns: ktcloud-market-msa-release
         - app: product-service
           environment: release
           revision: HEAD
+          ns: ktcloud-market-msa-release
         - app: user-api-gateway
           environment: release
           revision: HEAD
+          ns: ktcloud-market-msa-release
   template:
     metadata:
       name: '{{ .app }}-{{ .environment }}'
@@ -34,7 +38,7 @@ spec:
           ref: values
       destination:
         server: https://kubernetes.default.svc
-        namespace: release
+        namespace: '{{ .ns }}'
       syncPolicy:
         automated:
           prune: true
