@@ -17,7 +17,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  defaultStorageClass: ""
+  defaultStorageClass: "nfs-client"
   ## Security parameters
   ##
   security:
@@ -1074,14 +1074,14 @@ controller:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "nfs-client"
     ## @param controller.persistence.accessModes Persistent Volume Access Modes
     ##
     accessModes:
       - ReadWriteOnce
     ## @param controller.persistence.size PVC Storage Request for Kafka data volume
     ##
-    size: 8Gi
+    size: 2Gi
     ## @param controller.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1114,14 +1114,14 @@ controller:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "nfs-client"
     ## @param controller.logPersistence.accessModes Persistent Volume Access Modes
     ##
     accessModes:
       - ReadWriteOnce
     ## @param controller.logPersistence.size PVC Storage Request for Kafka logs volume
     ##
-    size: 8Gi
+    size: 2Gi
     ## @param controller.logPersistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1534,14 +1534,14 @@ broker:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "nfs-client"
     ## @param broker.persistence.accessModes Persistent Volume Access Modes
     ##
     accessModes:
       - ReadWriteOnce
     ## @param broker.persistence.size PVC Storage Request for Kafka data volume
     ##
-    size: 8Gi
+    size: 2Gi
     ## @param broker.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1574,14 +1574,14 @@ broker:
     ## If undefined (the default) or set to null, no storageClassName spec is
     ## set, choosing the default provisioner.
     ##
-    storageClass: ""
+    storageClass: "nfs-client"
     ## @param broker.logPersistence.accessModes Persistent Volume Access Modes
     ##
     accessModes:
       - ReadWriteOnce
     ## @param broker.logPersistence.size PVC Storage Request for Kafka logs volume
     ##
-    size: 8Gi
+    size: 2Gi
     ## @param broker.logPersistence.annotations Annotations for the PVC
     ##
     annotations: {}

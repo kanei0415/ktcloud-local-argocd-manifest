@@ -13,6 +13,9 @@ spec:
       - path: Charts/Traefik
         appname: traefik
         ns: traefik
+      - path: Charts/NFSProvisioner
+        appname: nfs-provisioner
+        ns: kube-system
   template:
     metadata:
       name: '{{appname}}'

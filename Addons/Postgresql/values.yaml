@@ -17,8 +17,8 @@ global:
   ## @param global.defaultStorageClass Global default StorageClass for Persistent Volume(s)
   ## @param global.storageClass DEPRECATED: use global.defaultStorageClass instead
   ##
-  defaultStorageClass: ""
-  storageClass: ""
+  defaultStorageClass: "nfs-client"
+  storageClass: "nfs-client"
   ## Security parameters
   ##
   security:
@@ -845,14 +845,14 @@ primary:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "nfs-client"
     ## @param primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: 8Gi
+    size: 2Gi
     ## @param primary.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1307,14 +1307,14 @@ readReplicas:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: ""
+    storageClass: "nfs-client"
     ## @param readReplicas.persistence.accessModes PVC Access Mode for PostgreSQL volume
     ##
     accessModes:
       - ReadWriteOnce
     ## @param readReplicas.persistence.size PVC Storage Request for PostgreSQL volume
     ##
-    size: 8Gi
+    size: 2Gi
     ## @param readReplicas.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
@@ -1465,14 +1465,14 @@ backup:
       ## If undefined (the default) or set to null, no storageClassName spec is
       ## set, choosing the default provisioner.
       ##
-      storageClass: ""
+      storageClass: "nfs-client"
       ## @param backup.cronjob.storage.accessModes PV Access Mode
       ##
       accessModes:
         - ReadWriteOnce
       ## @param backup.cronjob.storage.size PVC Storage Request for the backup data volume
       ##
-      size: 8Gi
+      size: 2Gi
       ## @param backup.cronjob.storage.annotations PVC annotations
       ##
       annotations: {}
