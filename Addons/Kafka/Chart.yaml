@@ -1,0 +1,11 @@
+apiVersion: v2
+name: ktcloud-kafka
+description: Kafka wrapper for multi-db setup
+type: application
+version: 1.0.0
+appVersion: "4.0.0"
+
+dependencies:
+  - name: kafka
+    version: 32.4.3
+    repository: https://charts.bitnami.com/bitnami
