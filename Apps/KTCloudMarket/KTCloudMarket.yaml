@@ -30,7 +30,7 @@ spec:
       project: default
       sources:
         - repoURL: https://github.com/kanei0415/ktcloud-market-msa-manifest.git
-          targetRevision: HEAD
+          targetRevision: '{{ revision }}'
           path: '.'
           ref: template
         - repoURL: 'https://github.com/kanei0415/ktcloud-market-msa-manifest-values.git'
@@ -45,6 +45,7 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
+          - SkipDryRunOnMissingResource=true
       helm:
         valueFiles:
           - '$values/{{ app }}/values-{{ environment }}.yaml'
