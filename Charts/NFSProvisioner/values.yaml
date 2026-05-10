@@ -9,7 +9,7 @@ nfs-subdir-external-provisioner:
   storageClass:
     name: nfs-client
     defaultClass: true
-    reclaimPolicy: Retain
+    reclaimPolicy: Delete
     archiveOnDelete: true
 
   volumeMounts:
