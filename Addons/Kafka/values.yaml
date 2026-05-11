@@ -34,8 +34,3 @@ kafka:
       protocol: PLAINTEXT
     external:
       protocol: PLAINTEXT
-
-  sasl:
-    enabledMechanisms: PLAIN
-    interBrokerMechanism: PLAIN
-    controllerMechanism: PLAIN
