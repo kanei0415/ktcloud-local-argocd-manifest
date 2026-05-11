@@ -19,5 +19,5 @@ nfs-subdir-external-provisioner:
   volumes:
     - name: nfs-subdir-external-provisioner-root
       nfs:
-        server: 192.168.241.153
+        server: 192.168.241.158
         path: /srv/nfs/kubedata
