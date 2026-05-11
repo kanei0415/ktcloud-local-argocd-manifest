@@ -1,5 +1,7 @@
 global:
   defaultStorageClass: "nfs-client"
+  security:
+    allowInsecureImages: true
 
 kafka:
   image:
