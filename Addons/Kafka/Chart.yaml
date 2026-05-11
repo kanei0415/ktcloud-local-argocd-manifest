@@ -3,7 +3,7 @@ name: ktcloud-kafka
 description: Kafka wrapper for multi-db setup
 type: application
 version: 1.0.0
-appVersion: "4.0.0"
+appVersion: "3.9.0"
 
 dependencies:
   - name: kafka
