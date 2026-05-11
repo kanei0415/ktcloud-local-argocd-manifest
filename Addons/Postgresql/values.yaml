@@ -38,9 +38,10 @@ global:
     ##
     fullnameOverride: ""
     auth:
-      existingSecret: "ktcluod-secrets"
+      postgresPassword: "admin1234"
+      existingSecret: ""
       secretKeys:
-        adminPasswordKey: "postgres-password"
+        adminPasswordKey: ""
         userPasswordKey: ""
         replicationPasswordKey: ""
         metricsPasswordKey: ""
