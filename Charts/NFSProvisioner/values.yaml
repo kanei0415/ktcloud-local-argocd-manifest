@@ -1,7 +1,7 @@
 
 nfs-subdir-external-provisioner:
   nfs:
-    server: 192.168.241.153
+    server: 192.168.241.158
     path: /srv/nfs/kubedata
     mountOptions:
       - nfsvers=4.1
