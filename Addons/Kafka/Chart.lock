@@ -1,6 +1,6 @@
 dependencies:
-- name: kafka
-  repository: https://charts.bitnami.com/bitnami
-  version: 32.4.3
-digest: sha256:6941ecf44e3362512523cb26d235fad414a20c29aa244c0a8bb42d6ca0b5502f
-generated: "2026-05-10T18:34:41.505069+09:00"
+- name: strimzi-kafka-operator
+  repository: https://strimzi.io/charts/
+  version: 1.0.0
+digest: sha256:fc9a0ea7d0cfa8e5f2eaba80e76b4f8eb2e1e9abdd8aaefae16bdba16e6270e2
+generated: "2026-05-11T11:46:13.374994+09:00"
